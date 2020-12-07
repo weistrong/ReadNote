@@ -6,5 +6,5 @@
 * ***git fetch***
   * 获取最新的远程分支
 
-* ***git reset -hard origin/(branch-name)***
+* ***git reset --hard origin/(branch-name)***
   * 放弃本地工作区修改，指定的远程分支覆盖本地。
