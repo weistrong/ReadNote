@@ -113,14 +113,14 @@
 
     ```bash
     # 文件路径：etc/gitconfig
-    git config --system
+    git config --system --list
     ```
 
   * 全局配置
 
     ```bash
     # 文件路径：~/.gitconfig 或者 ~/.config/git/config
-    git config --global
+    git config --global --list
     ```
 
   * 本地配置（.git/config）
@@ -141,8 +141,13 @@
   git config --global core.autocrlf true
   # Linux或Mac中，提交时把回车和换行转换成换行，检出时不转换
   git config --global core.autocrlf input
+  
+# 设置别名
+  git config --global alias.co checkout
+  # 取消别名
+  git config --global unset alias.co
   ```
-
+  
   
 
 #### 忽略文件
