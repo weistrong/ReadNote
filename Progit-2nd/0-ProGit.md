@@ -142,6 +142,7 @@
   # Linux或Mac中，提交时把回车和换行转换成换行，检出时不转换
   git config --global core.autocrlf input
   
+  ```
 # 设置别名
   git config --global alias.co checkout
   # 取消别名
@@ -161,7 +162,7 @@
 
 #### 远程仓库
 
-```bash
+​```bash
 # 查看远程仓库
 git remote show [remote-name]
 # 需要读写远程仓库使用的Git保存的简介与其对应的URL
@@ -171,7 +172,7 @@ git remote -v
 git remote rename [old-name] [new-name]
 # 移除远程仓库
 git remote rm [remote-name]
-```
+  ```
 
 
 
@@ -343,12 +344,13 @@ git stash
 git stash -u
 # 查看储藏的信息
 git stash list
+
 # 重新应用储藏的信息
-# 默认最近的储藏
+# 默认最近的储藏(stash列表继续保留在栈上)
 git stash apply
 # 重新应用指定的暂存的信息
 git stash apply stash@{[n]}
-# 应用储藏并在栈上移除
+# 应用储藏(并在栈上移除)
 git stash pop
 # 移除储藏
 git stash drop stash@{[n]}
