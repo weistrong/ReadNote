@@ -331,6 +331,19 @@ git checkout -- [file-name]
 git reset --hard [branch-name]
 ```
 
+#### 撤销提交
+
+```shell
+# 第一种方式：撤销提交。
+# ！！！如果已经推送到远程，并且其他人已经有了这个提交，不要使用！
+git reset --hard HEAD~
+
+# 第二种方式：还原提交。
+git revert -m 1 HEAD
+git revert ^M
+git merge [branch-name]
+```
+
 
 
 #### 储藏与清理
@@ -473,19 +486,6 @@ git checkout --conflict=diff3 [file-name]
 git log --oneline --left-right HEAD...MERGE_HEAD
 # 只显示任何一边接触了合并冲突文件的提交
 git log --oneline --left-right --merge
-```
-
-###### 撤销合并
-
-```bash
-# 第一种方式：撤销提交。
-# ！！！如果已经推送到远程，并且其他人已经有了这个提交，不要使用！
-git reset --hard HEAD~
-
-# 第二种方式：还原提交。
-git revert -m 1 HEAD
-git revert ^M
-git merge [branch-name]
 ```
 
 ###### 其他类型的合并
