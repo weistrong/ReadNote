@@ -430,7 +430,7 @@ git reset --mixed HEAD [file-name]
 ```bash
 # 退出合并
 # 尝试恢复你运行合并前的状态。但当运行命令前，在工作目录中有未储藏、未提交的修改时它不能完美处理。
-git merge --about
+git merge --abort
 # 忽略任意数量的已有空白的修改
 git merge -Xignore-space-change [branch-name]
 # 忽略所有的空白修改
