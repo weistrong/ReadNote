@@ -288,8 +288,6 @@ git log --not [branch-1] [branch-2]
 git log --left-right [branch-1] [branch-2]
 ```
 
-
-
 #### 提交更新
 
 ``` bash
@@ -303,8 +301,6 @@ git commit --amend
 git rebase -i HEAD~[n]
 ```
 
-
-
 #### 移除文件
 
 ``` bash 
@@ -315,8 +311,6 @@ git rm log/\*.log
 # 如果删除之前修改过，并已经添加到暂存区，需要使用强制删除(force)，这样的数据不能被Git恢复。
 git rm -f [file-name]
 ```
-
-
 
 #### 撤销操作
 
@@ -344,8 +338,6 @@ git revert ^M
 git merge [branch-name]
 ```
 
-
-
 #### 储藏与清理
 
 > 可以在一个分支上保存储藏，在另一个分支上应用。
@@ -369,8 +361,6 @@ git stash pop
 git stash drop stash@{[n]}
 ```
 
-
-
 #### 搜索
 
 > grep 命令可以方便的从提交历史或工作目录中查找一个字符串或者正则表达式
@@ -390,8 +380,6 @@ git log -S [keywords]
 # 查看代码中一行或一个函数的历史
 git log -L :[method-name]:[class-name]
 ```
-
-
 
 #### 重置
 
@@ -426,8 +414,6 @@ git reset --mixed HEAD [file-name]
 2 git commit 
 ```
 
-
-
 #### 检出
 
 > git checkout [branch-name] 和 git reset --hard [branch-name]非常相似，但是有两点重要区别：
@@ -436,7 +422,6 @@ git reset --mixed HEAD [file-name]
 
 2. reset会移动HEAD分支的指向，而checkout只会移动HEAD自身来指向另一个分支。
 
-   
 
 #### 合并
 
@@ -498,8 +483,6 @@ git merge-file --ours
 git merge-file --theirs
 ```
 
-
-
 #### 调试
 
 ```bash
@@ -520,8 +503,6 @@ git bisect good			# 在当前检出的分支上测试后发现没有问题，证
 git bisect bad			# 重新检出分支后发现问题存在
 git bisect reset 		# 完成操作之后，重置HEAD指针到最开始的位置。
 ```
-
-
 
 #### 属性
 
