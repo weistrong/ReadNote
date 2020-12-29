@@ -141,8 +141,12 @@
   git config --global core.autocrlf true
   # Linux或Mac中，提交时把回车和换行转换成换行，检出时不转换
   git config --global core.autocrlf input
-  
   ```
+
+#### .gitattribute
+
+> 通过使用 `属性` ，可以对项目中的文件或目录单独定义不同的合并策略，让Git之岛怎样比较非文本文件，或者让Git在提交或检出前过滤内容。
+
 # 设置别名
   git config --global alias.co checkout
   # 取消别名
