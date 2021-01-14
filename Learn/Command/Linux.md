@@ -12,4 +12,10 @@
   cat /etc/issue
   ```
 
+* 忘记 root 密码
+
+  ```Shell
+  sudo passwd root
+  ```
+
   
