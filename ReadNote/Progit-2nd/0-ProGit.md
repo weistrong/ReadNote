@@ -370,7 +370,8 @@ git stash apply stash@{[n]}
 # 应用储藏(并在栈上移除)
 git stash pop
 # 移除储藏
-git stash drop stash@{[n]}
+# 旧版：git stash drop stash@{[n]}
+git stash drop -q [n]
 ```
 
 #### 搜索
