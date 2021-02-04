@@ -141,6 +141,8 @@
   git config --global core.autocrlf true
   # Linux或Mac中，提交时把回车和换行转换成换行，检出时不转换
   git config --global core.autocrlf input
+  # 开发仅运行在Windows上的项目时
+  git config --global core.autocrlf false
   
   # git可以创建4096长度的文件名，Windows最大是260，解决这个问题：
   git config --global core.longpaths true
