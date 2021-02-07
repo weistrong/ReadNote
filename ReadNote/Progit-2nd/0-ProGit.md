@@ -28,7 +28,7 @@
 
 * 工作目录下的文件只有两种状态：
   * 已跟踪(_tracked_)。
-  * 未跟踪(_untracked)。
+  * 未跟踪(_untracked_)。
 
 #### <a name="Git是如何保存对象的">Git是如何保存对象的</a>
 
@@ -162,12 +162,6 @@
 git config --global unset alias.co
   ```
 
-
-
-  ```
-  
-  
-
 #### 忽略文件
 
 * `.gitignorn` 文件的格式规范：
@@ -179,7 +173,7 @@ git config --global unset alias.co
 
 #### 远程仓库
 
-​```bash
+```bash
 # 查看远程仓库
 git remote show [remote-name]
 # 需要读写远程仓库使用的Git保存的简介与其对应的URL
@@ -189,7 +183,7 @@ git remote -v
 git remote rename [old-name] [new-name]
 # 移除远程仓库
 git remote rm [remote-name]
-  ```
+```
 
 
 
