@@ -9,12 +9,36 @@
 #### MySQL的四种行记录格式
 
 * **Redundant**
+  
   * 以前使用的旧格式，为了兼容性一直保留。
+  
 * **Compact**
+  
   * 自 MySQL 5.1 开始默认的行记录格式。
+  
 * **Dynamic**
+  
   * 自 MySQL 5.7 开始默认的行记录格式。
+  
 * **Compressed**
+
+  > Antelope：
+  >
+  > ​	先前未命名的，原始的 InnoDB文件格式，支持两种行格式：Compact 和 Redundant。MySQL 5.6 的默认文件格式。
+  >
+  > ​	可以与早期的版本保持最大的兼容性，不支持 Barracuda 文件格式。
+  >
+  > Barracuda：
+  >
+  > ​	新的文件格式。支持 InnoDB 的所有行格式，包括：Compressed 和 Dynamic。
+  >
+  > ​	这两个新的行格式相关的功能包括：InnoDB 表的压缩，长列数据的页外存储和索引。键前缀最大长度为 3072 字节。
+  >
+  > MySQL 5.7.9 及以后的版本中，
+  >
+  > 默认行格式由 `innodb_default_row_format` 变量决定，默认值是 `Dynamic`。也可以在创建表的时候指定：`ROW_FORMAT = Dynamic`。
+  >
+  > 如果要修改现有表的行模式为 Compressed 或 Dynamic，必须先将文件格式设置成 Barracuda：`SET GLOBAL innodb_file_format=Barracuda`。再用 `ALTER TABLEW [table_name] ROW_FORMAT=Dynamic` 修改才会生效。
 
 
 
@@ -117,11 +141,5 @@ SHOW CHATSET # 对应 MaxLen 的列的值。
 
 
 #### Dynamic 和 Compressed 格式
-
-> InnoDB 1.0.x 版本开始引入新的文件格式（新的页格式）。
->
-> 以前支持的 Compact 和 Redundant 格式称为 Antelope 文件格式。
->
-> 两种新的行记录格式是 Dynamic 和 Compressed，被称为 Barracuda 格式。
 
 > 新的两种行记录格式对于存放在 BLOB 中的数据采用完全行溢出的方式，即连 768 个字节的数据也被移到了溢出页中，数据页（B-Tree Node）中只存放了 20 个字节的溢出页地址。同时 Compressed 行记录格式会对行数据使用 zlib 算法进行压缩，因此在存储 BLOB、TEXT、VARCHAR 这类大长度类型的数据时比较有优势。
