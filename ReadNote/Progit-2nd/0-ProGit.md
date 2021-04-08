@@ -272,6 +272,8 @@ git log --oneline --decorate
 git log --oneline --decorate --graph --all
 # 使用可视化的合并工具
 git mergetool
+# 查看指定分支的历史操作记录
+git reflog show [branch-name]
 ```
 
 ```bash
